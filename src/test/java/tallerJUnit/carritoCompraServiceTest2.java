@@ -9,16 +9,13 @@ import java.io.IOException;
 import org.junit.BeforeClass;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
-import org.junit.jupiter.api.MethodOrderer;
-import org.junit.jupiter.api.Order;
-import org.junit.jupiter.api.TestMethodOrder;
 import org.junit.runners.MethodSorters;
 
 import com.everis.bootcamp.tallerjunit.Articulo;
 import com.everis.bootcamp.tallerjunit.CarritoCompraService;
 
 @FixMethodOrder(MethodSorters.NAME_ASCENDING) //Orden alfabetico 
-@TestMethodOrder(MethodOrderer.OrderAnnotation.class) //Orden determinado Order()
+//@TestMethodOrder(OrderAnnotation.class) //Orden determinado Order()
 public class carritoCompraServiceTest2 {
 	
 	static CarritoCompraService carritoCompraService;
@@ -31,7 +28,6 @@ public class carritoCompraServiceTest2 {
 	}
 	
 	@Test
-    @Order(1)
 	public void testAddArticulo() {
 		Articulo a = new Articulo("Descripción de artículo", 1.0);
 		
@@ -44,7 +40,6 @@ public class carritoCompraServiceTest2 {
 	}
 	
 	@Test
-    @Order(2)
 	public void testLimpiaCesta() throws IOException {
 		carritoCompraService.limpiarCesta();
 		assertTrue("La lista NO está vacia", carritoCompraService.getArticulos().isEmpty());
@@ -55,7 +50,6 @@ public class carritoCompraServiceTest2 {
 	}
 	
 	@Test
-    @Order(3)
 	public void testTotalPrice() {
 		
 		double precioTotalCalculado = 0.0;
