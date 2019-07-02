@@ -1,5 +1,6 @@
 package com.everis.bootcamp.tallerjunit;
 
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -7,7 +8,12 @@ public class CarritoCompraService {
 	
 	List<Articulo> articulos = new ArrayList<Articulo>();
 	
-	public void limpiarCesta(){
+	public void limpiarCesta() throws IOException{
+		
+		if(articulos.isEmpty()) {
+			throw new IOException("Carrito vacio");
+		}
+		
 		articulos = new ArrayList<Articulo>();
 	}
 	
