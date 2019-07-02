@@ -67,7 +67,16 @@ public class CarritoCompraService {
 		this.bbddService = bbddService;
 	}
 
+	///////////////////////
 	
+	public Integer guardaArticulo(Articulo a) {
+		
+		Integer idRecuperado = bbddService.insertArticulo(a);
+		addArticulo(bbddService.findArticuloById(idRecuperado));
+		System.out.println(idRecuperado);
+		
+		return idRecuperado;
+	}
 	
 
 }

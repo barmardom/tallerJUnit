@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class BaseDeDatosService {
 
-	Map<Integer, Articulo> storage = new  HashMap<Integer, Articulo> ();
+	public Map<Integer, Articulo> storage = new  HashMap<Integer, Articulo> ();
 	
 	public BaseDeDatosService() {
 		super();
